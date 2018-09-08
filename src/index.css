@@ -1,0 +1,148 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  /*margin: 30px;*/
+  background-color: saddlebrown;
+}
+
+ol, ul {
+  /*padding-left: 30px;*/
+}
+
+.board-row {
+  /*position: relative;*/
+  margin: 0px;
+  padding: 0px;
+  height: 11.1111%;
+}
+
+/*.board-row:after {*/
+  /*clear: both;*/
+  /*content: "";*/
+  /*display: table;*/
+/*}*/
+
+.status {
+  margin-bottom: 10px;
+}
+
+hr {
+  position: absolute;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  /*top: 50%;*/
+  /*right: 0;*/
+  width: 100%;
+  border-color: black;
+  z-index: 10;
+}
+
+hr.horizontal {
+
+}
+
+hr.vertical {
+  /*top: 0%;*/
+  /*top: 50%;*/
+  /*right: -4%;*/
+  transform: rotate(90deg);
+}
+
+.stone {
+  /*position: absolute;*/
+  /*margin-top: -20px;*/
+  /*!*top: 50%;*!*/
+  /*!*left: 50%;*!*/
+  /*margin-left: 10px;*/
+}
+
+.black {
+  background-color: black;
+  opacity: 1;
+}
+
+.white {
+  background-color: ghostwhite;
+  opacity: 1;
+}
+
+.dot {
+  position: relative;
+  /*margin-top: -20px;*/
+  /*margin-left: 10px;*/
+  /*margin-top: auto;*/
+  /*margin-left: auto;*/
+  /*top: 6%;*/
+  /*right: 10%;*/
+  /*margin-left: 20px;*/
+  height: 40px;
+  width: 40px;
+  background-color: ghostwhite;
+  opacity: 0.5;
+  border-radius: 50%;
+  /*display: inline-block;*/
+  z-index: 10;
+}
+
+.square {
+  position: relative;
+  background: #ffa54f;
+  border: 1px solid  white;
+  /*float: left;*/
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 100%;
+  height: 100%;
+  /*height: 46px;*/
+  padding: 0px;
+  margin: 0px;
+  /*margin: -1px -1px -1px -1px;*/
+  /*margin-right: -1px;*/
+  /*margin-top: -1px;*/
+  /*margin-left: -1px;*/
+  /*margin-bottom: -1px;*/
+  /*padding: 0;*/
+  text-align: center;
+  width: 11.11111%;
+  z-index: -10;
+}
+
+.big {
+  border: 5px solid black;
+  height: 480px;
+  width: 480px;
+  padding: 0px;
+  margin: 0px;
+  /*margin-right: -20px;*/
+  /*margin-top: 20px;*/
+  /*margin-bottom: 5px;*/
+}
+
+.medium {
+  position: absolute;
+  border: 3px solid black;
+  height: 420px;
+  width: 420px;
+  /*top: 5%;*/
+  /*right: 7%;*/
+  /*margin-left: 20px;*/
+  /*margin-top: 20px;*/
+  /*margin-bottom: 5px;*/
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
