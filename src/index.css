@@ -1,6 +1,7 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 100px;
+  margin: 0;
+  padding: 0;
   background-color: saddlebrown;
 }
 
@@ -111,31 +112,31 @@ hr.vertical {
   /*margin-bottom: -1px;*/
   /*padding: 0;*/
   text-align: center;
-  width: 11.11111%;
   /*z-index: -10;*/
 }
 
 .big {
   border: 5px solid black;
-  height: 480px;
-  width: 480px;
+  background: #ffa54f;
+  height: 600px;
+  width: 600px;
   padding: 0px;
-  margin: 0px;
-  /*margin-right: -20px;*/
-  /*margin-top: 20px;*/
-  /*margin-bottom: 5px;*/
+  margin: 100px;
 }
 
 .medium {
-  position: absolute;
-  border: 3px solid black;
-  height: 420px;
-  width: 420px;
-  /*top: 5%;*/
-  /*right: 7%;*/
-  /*margin-left: 20px;*/
-  /*margin-top: 20px;*/
-  /*margin-bottom: 5px;*/
+  position: relative;
+  border: 4px solid black;
+  height: 480px;
+  width: 480px;
+  margin-top: -240px;
+  margin-left: -240px;
+  top: 50%;
+  left: 50%;
+  /*clip: inset-rect(0px,25px,25px,0px);*/
+  clip-path: inset(6.1% 6.1% 6.1% 6.1%);
+  /*clip: rect(100px,100px, 10px, 10px)*/
+  /*clip-path: inset(10px, 20px, 30px, 40px);*/
 }
 
 .square:focus {

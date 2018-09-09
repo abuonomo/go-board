@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
 
 function Square(props) {
     var stone_opacity = 0;
-    if (props.value===null) {
+    if (props.value===null || props.shiftKey) {
         stone_opacity = 0;
     }
     else {
         stone_opacity = 1;
     }
-
+    var percentage = String(100 / props.size) + '%'
     return (
-        <button className="square" onClick={props.onClick}>
+        <button className="square" onClick={props.onClick}
+                style={{width:percentage}}
+        >
             <hr className="horizontal"></hr>
             <hr className="vertical"></hr>
             <div className="stone"
@@ -24,24 +25,6 @@ function Square(props) {
     );
 }
 
-function Vertex(props) {
-    return (
-        <hr width="1px"></hr>
-    );
-}
-
-// class Square extends React.Component {
-//     render() {
-//         return (
-//             <button
-//                 className="square"
-//                 onClick={() => { this.props.onClick(); }}
-//             >
-//                 {this.props.value}
-//             </button>
-//         );
-//     }
-// }
 
 class Board extends React.Component {
 
@@ -59,6 +42,7 @@ class Board extends React.Component {
     }
 
     handleClick(i, j) {
+        // console.log(event.shiftKey)
         const squares = this.state.squares.slice();
 
         squares[i][j] = this.state.xIsNext ? 'black' : 'white';
@@ -71,6 +55,7 @@ class Board extends React.Component {
     renderSquare(i, j) {
         return (
             <Square
+                size={this.props.size}
                 onClick={() => this.handleClick(i, j)}
                 key={i * this.props.size + j}
                 value={this.state.squares[i][j]}
@@ -85,7 +70,8 @@ class Board extends React.Component {
         for (var i = 0; i < this.props.size; i++) {
             squares.push(this.renderSquare(i, j))
         }
-        return <div className="board-row">{squares}</div>;
+        var key0 = 'row'+ String(j)
+        return <div className="board-row" key={key0}>{squares}</div>;
     }
 
     render() {
@@ -108,11 +94,11 @@ class Board extends React.Component {
         // }
 
         return (
-            <div className="square big">
+            <div className="big">
                 {/*<div className="status">{status}</div>*/}
-                {/*<div class="square medium">*/}
+                <div className="medium">
                     {cols}
-                {/*</div>*/}
+                </div>
             </div>
         );
     }
