@@ -4,24 +4,22 @@ import './index.css';
 // import App from './App';
 
 function Square(props) {
-    var stone_class = "";
     var stone_opacity = 0;
-    if (props.value==null) {
-        stone_class = "dot stone";
+    if (props.value===null) {
+        stone_opacity = 0;
     }
     else {
-        stone_class = "dot stone " + props.value;
         stone_opacity = 1;
     }
 
     return (
         <button className="square" onClick={props.onClick}>
-            <hr class="horizontal"></hr>
-            <hr class="vertical"></hr>
-            {/*<div class={stone_class}*/}
-                 {/*style={{backgroundColor:props.value, opacity:stone_opacity}}*/}
-            {/*>*/}
-            {/*</div>*/}
+            <hr className="horizontal"></hr>
+            <hr className="vertical"></hr>
+            <div className="stone"
+                 style={{backgroundColor:props.value, opacity:stone_opacity}}
+            >
+            </div>
         </button>
     );
 }
@@ -47,7 +45,6 @@ function Vertex(props) {
 
 class Board extends React.Component {
 
-
     constructor(props) {
         super(props);
         var multiArray = [];
@@ -63,9 +60,7 @@ class Board extends React.Component {
 
     handleClick(i, j) {
         const squares = this.state.squares.slice();
-        // if (calculateWinner(squares) || squares[i]) {
-        //     return;
-        // }
+
         squares[i][j] = this.state.xIsNext ? 'black' : 'white';
         this.setState({
             squares: squares,
@@ -76,19 +71,19 @@ class Board extends React.Component {
     renderSquare(i, j) {
         return (
             <Square
+                onClick={() => this.handleClick(i, j)}
+                key={i * this.props.size + j}
                 value={this.state.squares[i][j]}
                 x={i}
                 y={j}
-                // value={this.state.squares[i]}
-                onClick={() => this.handleClick(i, j)}
             />
-    );
+        );
     }
 
     renderRow(j) {
         var squares = [];
         for (var i = 0; i < this.props.size; i++) {
-            squares.push(this.renderSquare(j, i))
+            squares.push(this.renderSquare(i, j))
         }
         return <div className="board-row">{squares}</div>;
     }
@@ -113,7 +108,7 @@ class Board extends React.Component {
         // }
 
         return (
-            <div class="square big">
+            <div className="square big">
                 {/*<div className="status">{status}</div>*/}
                 {/*<div class="square medium">*/}
                     {cols}

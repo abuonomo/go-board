@@ -1,6 +1,6 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  /*margin: 30px;*/
+  margin: 100px;
   background-color: saddlebrown;
 }
 
@@ -34,7 +34,7 @@ hr {
   /*right: 0;*/
   width: 100%;
   border-color: black;
-  z-index: 10;
+  /*z-index: 10;*/
 }
 
 hr.horizontal {
@@ -45,16 +45,17 @@ hr.vertical {
   /*top: 0%;*/
   /*top: 50%;*/
   /*right: -4%;*/
+  left: -2%;
   transform: rotate(90deg);
 }
 
-.stone {
+/*.stone {*/
   /*position: absolute;*/
   /*margin-top: -20px;*/
   /*!*top: 50%;*!*/
   /*!*left: 50%;*!*/
   /*margin-left: 10px;*/
-}
+/*}*/
 
 .black {
   background-color: black;
@@ -66,8 +67,15 @@ hr.vertical {
   opacity: 1;
 }
 
-.dot {
-  position: relative;
+.stone {
+  position: absolute;
+  padding: 0;
+  /*margin: 0;*/
+  margin-top: -40%;
+  margin-left: 10%;
+  /*top: 25%;*/
+  /*left: 25%;*/
+  /*vertical-align: middle;*/
   /*margin-top: -20px;*/
   /*margin-left: 10px;*/
   /*margin-top: auto;*/
@@ -75,19 +83,19 @@ hr.vertical {
   /*top: 6%;*/
   /*right: 10%;*/
   /*margin-left: 20px;*/
-  height: 40px;
-  width: 40px;
+  height: 80%;
+  width: 80%;
   background-color: ghostwhite;
   opacity: 0.5;
   border-radius: 50%;
   /*display: inline-block;*/
-  z-index: 10;
+  /*z-index: 80;*/
 }
 
 .square {
   position: relative;
   background: #ffa54f;
-  border: 1px solid  white;
+  border: 0px solid white;
   /*float: left;*/
   font-size: 14px;
   font-weight: bold;
@@ -104,7 +112,7 @@ hr.vertical {
   /*padding: 0;*/
   text-align: center;
   width: 11.11111%;
-  z-index: -10;
+  /*z-index: -10;*/
 }
 
 .big {
